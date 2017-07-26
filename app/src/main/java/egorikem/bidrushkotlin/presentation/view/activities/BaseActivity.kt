@@ -53,4 +53,5 @@ abstract class BaseActivity<P : BasePresenter<*>> : AppCompatActivity() {
     }
 
     abstract fun inject()
+    abstract fun initUi()
 }

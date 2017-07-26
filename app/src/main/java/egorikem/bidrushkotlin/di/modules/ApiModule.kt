@@ -2,7 +2,7 @@ package egorikem.bidrushkotlin.di.modules
 
 import dagger.Module
 import dagger.Provides
-import egorikem.bidrushkotlin.di.scope.PerActivity
+import egorikem.bidrushkotlin.controller.network.IBidRushApi
 import retrofit2.Retrofit
 
 /**
@@ -11,8 +11,7 @@ import retrofit2.Retrofit
 @Module
 class ApiModule {
     @Provides
-    @PerActivity
-    fun provideApiModule(retrofit: Retrofit): ApiModule {
-        return retrofit.create(ApiModule::class.java)
+    fun provideApiModule(retrofit: Retrofit): IBidRushApi {
+        return retrofit.create(IBidRushApi::class.java)
     }
 }

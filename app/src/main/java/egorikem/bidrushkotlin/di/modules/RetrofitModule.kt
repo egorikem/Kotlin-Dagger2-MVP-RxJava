@@ -2,7 +2,6 @@ package egorikem.bidrushkotlin.di.modules
 
 import dagger.Module
 import dagger.Provides
-import egorikem.bidrushkotlin.di.scope.PerActivity
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -12,7 +11,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 @Module
 class RetrofitModule(val api: String) {
     @Provides
-    @PerActivity
     fun provideRetrofit(): Retrofit {
         return Retrofit.Builder()
             .baseUrl(api)
