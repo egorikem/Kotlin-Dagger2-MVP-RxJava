@@ -2,9 +2,8 @@ package egorikem.bidrushkotlin.di.modules
 
 import dagger.Module
 import dagger.Provides
-import egorikem.bidrushkotlin.data.network.IBidRushApi
-import egorikem.bidrushkotlin.data.network.NetworkDataProvider
-import egorikem.bidrushkotlin.di.scope.PerActivity
+import egorikem.bidrushkotlin.controller.network.IBidRushApi
+import egorikem.bidrushkotlin.controller.network.NetworkDataProvider
 
 /**
  * Created by egorikem on 22/10/16.
@@ -12,7 +11,6 @@ import egorikem.bidrushkotlin.di.scope.PerActivity
 @Module
 class NetworkDataProviderModule {
     @Provides
-    @PerActivity
     fun provideNetworkDataProvider(api: IBidRushApi): NetworkDataProvider {
         return NetworkDataProvider(api)
     }
